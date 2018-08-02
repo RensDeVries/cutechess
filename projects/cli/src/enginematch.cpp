@@ -125,6 +125,7 @@ void EngineMatch::onGameFinished(ChessGame* game, int number)
 
 	if (m_tournament->playerCount() == 2)
 	{
+		MoveEvaluation moev;
 		TournamentPlayer fcp = m_tournament->playerAt(0);
 		TournamentPlayer scp = m_tournament->playerAt(1);
 		int totalResults = fcp.gamesFinished();
@@ -134,7 +135,7 @@ void EngineMatch::onGameFinished(ChessGame* game, int number)
 		      fcp.wins(), scp.wins(), fcp.draws(),
 		      double(fcp.score()) / (totalResults * 2),
 		      totalResults);
-		qInfo("nps= %s", MoveEvaluation.nps());
+		qInfo("nps= %s", moev.nps());
 	}
 
 	if (m_ratingInterval != 0
