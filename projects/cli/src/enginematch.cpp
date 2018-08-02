@@ -133,6 +133,7 @@ void EngineMatch::onGameFinished(ChessGame* game, int number)
 		      fcp.wins(), scp.wins(), fcp.draws(),
 		      double(fcp.score()) / (totalResults * 2),
 		      totalResults);
+		qInfo("nps %s", averagenps());
 	}
 
 	if (m_ratingInterval != 0
