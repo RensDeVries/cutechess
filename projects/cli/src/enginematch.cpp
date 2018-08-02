@@ -24,6 +24,7 @@
 #include <tournament.h>
 #include <gamemanager.h>
 #include <sprt.h>
+#include <moveevaluation.h>
 
 
 EngineMatch::EngineMatch(Tournament* tournament, QObject* parent)
@@ -133,7 +134,7 @@ void EngineMatch::onGameFinished(ChessGame* game, int number)
 		      fcp.wins(), scp.wins(), fcp.draws(),
 		      double(fcp.score()) / (totalResults * 2),
 		      totalResults);
-		qInfo("nps %s", MoveEvaluation.averagenps());
+		qInfo("nps= %s", MoveEvaluation.nps());
 	}
 
 	if (m_ratingInterval != 0
