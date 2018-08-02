@@ -155,7 +155,7 @@ quint64 MoveEvaluation::nps() const
 		return m_nps;
 	return quint64(m_nodeCount / (double(m_time) / 1000.0));
 }
-
+/*
 float MoveEvaluation::averagenps() const
 {
 	vector<float> npslist;
@@ -163,7 +163,7 @@ float MoveEvaluation::averagenps() const
 	avenps = accumulate(npslist.begin(), npslist.end(), 0.0) / npslist.size();
 	return float avenps;
 }
-
+*/
 quint64 MoveEvaluation::tbHits() const
 {
 	return m_tbHits;
