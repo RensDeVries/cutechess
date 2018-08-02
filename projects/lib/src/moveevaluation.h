@@ -92,7 +92,13 @@ class LIB_EXPORT MoveEvaluation
 		 * \note For human players this is always 0.
 		 */
 		quint64 nps() const;
-
+		
+		/*!
+		 * What is the average nodes per second over the whole match?
+		 * \note For human players this is always 0.
+		 */
+		float averagenps() const;
+	
 		/*!
 		 * How many positions were found in endgame tablebases?
 		 * \note For human players this is always 0.
