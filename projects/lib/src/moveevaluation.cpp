@@ -17,6 +17,10 @@
 */
 
 #include "moveevaluation.h"
+#include <iostream>
+#include <vector>
+#include <numeric>
+using namespace std;
 
 MoveEvaluation::MoveEvaluation()
 	: m_isBookEval(false),
@@ -150,6 +154,14 @@ quint64 MoveEvaluation::nps() const
 	if (m_nps || !m_time)
 		return m_nps;
 	return quint64(m_nodeCount / (double(m_time) / 1000.0));
+}
+
+float MoveEvaluation::averagenps() const
+{
+	vector<float> npslist;
+	npslist.push_back(m_nps);
+	avenps = accumulate(npslist.begin(), npslist.end(), 0.0) / npslist.size();
+	return float avenps;
 }
 
 quint64 MoveEvaluation::tbHits() const
